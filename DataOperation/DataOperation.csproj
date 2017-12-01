@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookmarksData.cs" />
+    <Compile Include="EnumClass.cs" />
     <Compile Include="Model\ChromeBookmarks.cs" />
     <Compile Include="Model\MyBookmarks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,9 +11,9 @@ using DataOperation.Model;
 
 namespace QNBookmark
 {
-    public partial class Form1 : Form
+    public partial class man : Form
     {
-        public Form1()
+        public man()
         {
             InitializeComponent();
         }
@@ -35,8 +35,12 @@ namespace QNBookmark
                 string str = StringConvert.FileRead(file_textpath.Text);
                 ChromeBookmarks chromeBookmarks = (ChromeBookmarks)StringConvert.JsonToList<ChromeBookmarks>(str);
 
-                BookmarksData bookmarksData=new BookmarksData();
-               var list= bookmarksData.GetBookmarkses(chromeBookmarks);
+                BookmarksData bookmarksData = new BookmarksData();
+                var list = bookmarksData.GetBookmarkses(chromeBookmarks);
+
+                dataG_Man.DataSource = list;
+                
+
                 MessageBox.Show(list.Count.ToString());
             }
 

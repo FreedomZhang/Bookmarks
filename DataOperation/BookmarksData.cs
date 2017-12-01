@@ -40,12 +40,16 @@ namespace DataOperation
                     if (datameta.children == null) continue;
                     foreach (var datametaChild in datameta.children)
                     {
-                        list.Add(new MyBookmarks()
+                        if (datametaChild.type == "url")
                         {
-                            Name = datametaChild.name,
-                            Url = datametaChild.url,
-                            Type = datameta.name
-                        });
+                            list.Add(new MyBookmarks()
+                            {
+                                Name = datametaChild.name,
+                                Url = datametaChild.url,
+                                Type = datameta.name,
+                                Source = EnumClass.SourceEnum.Chrome.ToString(),
+                            });
+                        }
                     }
                 }
                 //添加其他书签
@@ -55,7 +59,8 @@ namespace DataOperation
                     {
                         Name = datameta.name,
                         Url = datameta.url,
-                        Type = chromeBookmarks.roots.other.name
+                        Type = chromeBookmarks.roots.other.name,
+                        Source = EnumClass.SourceEnum.Chrome.ToString(),
                     });
 
                 }
