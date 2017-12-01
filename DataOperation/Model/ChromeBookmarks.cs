@@ -2,6 +2,9 @@
 
 namespace DataOperation.Model
 {
+    /// <summary>
+    /// Chorme书签保存文件结构
+    /// </summary>
     public class ChromeBookmarks
     {
         public string checksum { get; set; }

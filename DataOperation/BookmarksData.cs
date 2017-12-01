@@ -24,5 +24,44 @@ namespace DataOperation
             return null;
         }
 
+        /// <summary>
+        /// 将Chrome书签对象数据转为MyBookmarks数据
+        /// </summary>
+        /// <param name="chromeBookmarks"></param>
+        /// <returns></returns>
+        public List<MyBookmarks> GetBookmarkses(ChromeBookmarks chromeBookmarks)
+        {
+            List<MyBookmarks> list = new List<MyBookmarks>();
+            if (chromeBookmarks != null)
+            {
+                //添加分组书签
+                foreach (var datameta in chromeBookmarks.roots.bookmark_bar.children)
+                {
+                    if (datameta.children == null) continue;
+                    foreach (var datametaChild in datameta.children)
+                    {
+                        list.Add(new MyBookmarks()
+                        {
+                            Name = datametaChild.name,
+                            Url = datametaChild.url,
+                            Type = datameta.name
+                        });
+                    }
+                }
+                //添加其他书签
+                foreach (var datameta in chromeBookmarks.roots.other.children)
+                {
+                    list.Add(new MyBookmarks()
+                    {
+                        Name = datameta.name,
+                        Url = datameta.url,
+                        Type = chromeBookmarks.roots.other.name
+                    });
+
+                }
+            }
+            return list;
+        }
+
     }
 }

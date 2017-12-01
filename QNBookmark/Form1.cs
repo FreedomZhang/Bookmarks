@@ -34,6 +34,10 @@ namespace QNBookmark
             {
                 string str = StringConvert.FileRead(file_textpath.Text);
                 ChromeBookmarks chromeBookmarks = (ChromeBookmarks)StringConvert.JsonToList<ChromeBookmarks>(str);
+
+                BookmarksData bookmarksData=new BookmarksData();
+               var list= bookmarksData.GetBookmarkses(chromeBookmarks);
+                MessageBox.Show(list.Count.ToString());
             }
 
         }
