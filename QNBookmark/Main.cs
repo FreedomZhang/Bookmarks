@@ -84,6 +84,17 @@ namespace QNBookmark
                 }
             }
         }
+
+        private void t_Menu_del_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("暂无");
+        }
+
+        private void t_Menu_Visit_Click(object sender, EventArgs e)
+        {
+            string str = dataG_Man.SelectedRows[0].Cells["Url"].Value.ToString();
+            System.Diagnostics.Process.Start(str);  
+        }
         
 
     }

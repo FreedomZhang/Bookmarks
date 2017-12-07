@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.o_FileDialog = new System.Windows.Forms.OpenFileDialog();
             this.file_textpath = new System.Windows.Forms.TextBox();
             this.btn_Read = new System.Windows.Forms.Button();
             this.dataG_Man = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_serc = new System.Windows.Forms.Button();
+            this.txt_serc = new System.Windows.Forms.TextBox();
+            this.lab_serc = new System.Windows.Forms.Label();
+            this.lab_path = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.s_FileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.lab_path = new System.Windows.Forms.Label();
-            this.lab_serc = new System.Windows.Forms.Label();
-            this.txt_serc = new System.Windows.Forms.TextBox();
-            this.btn_serc = new System.Windows.Forms.Button();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.t_Menu_del = new System.Windows.Forms.ToolStripMenuItem();
+            this.t_Menu_Visit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataG_Man)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // o_FileDialog
@@ -78,39 +84,17 @@
             this.dataG_Man.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataG_Man.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
+            this.Url,
             this.Column3,
             this.Column4});
+            this.dataG_Man.ContextMenuStrip = this.contextMenu;
             this.dataG_Man.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataG_Man.Location = new System.Drawing.Point(0, 0);
             this.dataG_Man.Name = "dataG_Man";
             this.dataG_Man.RowTemplate.Height = 23;
+            this.dataG_Man.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataG_Man.Size = new System.Drawing.Size(638, 199);
             this.dataG_Man.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Name";
-            this.Column1.HeaderText = "名称";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Url";
-            this.Column2.HeaderText = "地址";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Type";
-            this.Column3.HeaderText = "分类";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Source";
-            this.Column4.HeaderText = "来源";
-            this.Column4.Name = "Column4";
             // 
             // splitContainer1
             // 
@@ -136,6 +120,41 @@
             this.splitContainer1.SplitterDistance = 79;
             this.splitContainer1.TabIndex = 3;
             // 
+            // btn_serc
+            // 
+            this.btn_serc.Location = new System.Drawing.Point(360, 34);
+            this.btn_serc.Name = "btn_serc";
+            this.btn_serc.Size = new System.Drawing.Size(75, 23);
+            this.btn_serc.TabIndex = 6;
+            this.btn_serc.Text = "查询";
+            this.btn_serc.UseVisualStyleBackColor = true;
+            this.btn_serc.Click += new System.EventHandler(this.btn_serc_Click);
+            // 
+            // txt_serc
+            // 
+            this.txt_serc.Location = new System.Drawing.Point(83, 37);
+            this.txt_serc.Name = "txt_serc";
+            this.txt_serc.Size = new System.Drawing.Size(262, 21);
+            this.txt_serc.TabIndex = 5;
+            // 
+            // lab_serc
+            // 
+            this.lab_serc.AutoSize = true;
+            this.lab_serc.Location = new System.Drawing.Point(14, 37);
+            this.lab_serc.Name = "lab_serc";
+            this.lab_serc.Size = new System.Drawing.Size(65, 12);
+            this.lab_serc.TabIndex = 4;
+            this.lab_serc.Text = "名称查询：";
+            // 
+            // lab_path
+            // 
+            this.lab_path.AutoSize = true;
+            this.lab_path.Location = new System.Drawing.Point(12, 12);
+            this.lab_path.Name = "lab_path";
+            this.lab_path.Size = new System.Drawing.Size(65, 12);
+            this.lab_path.TabIndex = 3;
+            this.lab_path.Text = "选择文件：";
+            // 
             // btn_save
             // 
             this.btn_save.Location = new System.Drawing.Point(460, 7);
@@ -150,40 +169,61 @@
             // 
             this.s_FileDialog.Filter = "|*.json";
             // 
-            // lab_path
+            // contextMenu
             // 
-            this.lab_path.AutoSize = true;
-            this.lab_path.Location = new System.Drawing.Point(12, 12);
-            this.lab_path.Name = "lab_path";
-            this.lab_path.Size = new System.Drawing.Size(65, 12);
-            this.lab_path.TabIndex = 3;
-            this.lab_path.Text = "选择文件：";
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.t_Menu_Visit,
+            this.toolStripSeparator1,
+            this.t_Menu_del});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(101, 54);
             // 
-            // lab_serc
+            // t_Menu_del
             // 
-            this.lab_serc.AutoSize = true;
-            this.lab_serc.Location = new System.Drawing.Point(14, 37);
-            this.lab_serc.Name = "lab_serc";
-            this.lab_serc.Size = new System.Drawing.Size(65, 12);
-            this.lab_serc.TabIndex = 4;
-            this.lab_serc.Text = "名称查询：";
+            this.t_Menu_del.Name = "t_Menu_del";
+            this.t_Menu_del.Size = new System.Drawing.Size(152, 22);
+            this.t_Menu_del.Text = "删除";
+            this.t_Menu_del.Click += new System.EventHandler(this.t_Menu_del_Click);
             // 
-            // txt_serc
+            // t_Menu_Visit
             // 
-            this.txt_serc.Location = new System.Drawing.Point(83, 37);
-            this.txt_serc.Name = "txt_serc";
-            this.txt_serc.Size = new System.Drawing.Size(262, 21);
-            this.txt_serc.TabIndex = 5;
+            this.t_Menu_Visit.Name = "t_Menu_Visit";
+            this.t_Menu_Visit.Size = new System.Drawing.Size(152, 22);
+            this.t_Menu_Visit.Text = "访问";
+            this.t_Menu_Visit.Click += new System.EventHandler(this.t_Menu_Visit_Click);
             // 
-            // btn_serc
+            // toolStripSeparator1
             // 
-            this.btn_serc.Location = new System.Drawing.Point(360, 34);
-            this.btn_serc.Name = "btn_serc";
-            this.btn_serc.Size = new System.Drawing.Size(75, 23);
-            this.btn_serc.TabIndex = 6;
-            this.btn_serc.Text = "查询";
-            this.btn_serc.UseVisualStyleBackColor = true;
-            this.btn_serc.Click += new System.EventHandler(this.btn_serc_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Name";
+            this.Column1.HeaderText = "名称";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Url
+            // 
+            this.Url.DataPropertyName = "Url";
+            this.Url.HeaderText = "地址";
+            this.Url.Name = "Url";
+            this.Url.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Type";
+            this.Column3.HeaderText = "分类";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Source";
+            this.Column4.HeaderText = "来源";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // man
             // 
@@ -199,6 +239,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -212,14 +253,18 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.SaveFileDialog s_FileDialog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btn_serc;
         private System.Windows.Forms.TextBox txt_serc;
         private System.Windows.Forms.Label lab_serc;
         private System.Windows.Forms.Label lab_path;
+        private System.Windows.Forms.ContextMenuStrip contextMenu;
+        private System.Windows.Forms.ToolStripMenuItem t_Menu_del;
+        private System.Windows.Forms.ToolStripMenuItem t_Menu_Visit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Url;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 
