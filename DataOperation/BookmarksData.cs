@@ -68,5 +68,15 @@ namespace DataOperation
             return list;
         }
 
+        /// <summary>
+        /// 保存成json文件
+        /// </summary>
+        /// <param name="myBookmarkses"></param>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static bool SaveMyBookmarksToJsonFile(List<MyBookmarks> myBookmarkses,string filePath)
+        {
+            return StringConvert.FileWrite(filePath,StringConvert.ListToJson(myBookmarkses));
+        }
     }
 }

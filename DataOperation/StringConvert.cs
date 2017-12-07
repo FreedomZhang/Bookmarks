@@ -57,5 +57,34 @@ namespace DataOperation
             string rel = File.ReadAllText(filePath);
             return rel;
         }
+
+        /// <summary>
+        /// 写入文件
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="conte"></param>
+        /// <returns></returns>
+        public static bool FileWrite(string filePath, string conte)
+        {
+            try
+            {
+                FileStream fs = new FileStream(filePath, FileMode.Create);
+                StreamWriter sw = new StreamWriter(fs);
+                //开始写入
+                sw.Write(conte);
+                //清空缓冲区
+                sw.Flush();
+                //关闭流
+                sw.Close();
+                fs.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
     }
 }
