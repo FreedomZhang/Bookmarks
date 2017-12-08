@@ -17,6 +17,7 @@ namespace QNBookmark
         public man()
         {
             InitializeComponent();
+            file_textpath.Text = @"C:\Users\Geekray\AppData\Local\Google\Chrome\User Data\Default\Bookmarks";
         }
 
         private List<MyBookmarks> _myBookmarkses;
