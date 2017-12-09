@@ -13,8 +13,38 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         xmlns:local="clr-namespace:QNBookmarkWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="书签管理" Height="350" Width="525">
     <Grid>
-       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="100" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition MinWidth="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="6"></GridSplitter>
+        <ListView Grid.Column="2" Name="ConteView"  ItemsSource="{Binding Items1}" >
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="MenuVisit" Header="访问" Click="MenuVisit_OnClick">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon  Kind="GoogleChrome" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuDelete" Header="删除">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon  Kind="Delete" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="名称" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Url}" Header="地址" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="分类" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Column="0" Content="测试" Click="Test_OnClick" Name="Test" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <Button Grid.Column="0" Content="设置" Name="Setting" Margin="0,40,0,0" Click="Setting_OnClick" HorizontalAlignment="Left"  VerticalAlignment="Top"></Button>
     </Grid>
 </Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="QNBookmarkWpf.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:local="clr-namespace:QNBookmarkWpf"
+        mc:Ignorable="d"
+        Title="设置" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Name="labPath" Grid.Row="0" Content="选择文件地址："></Label>
+        <TextBox Name="filePath" MouseDoubleClick="FilePath_OnMouseDoubleClick" Grid.Row="0"  materialDesign:HintAssist.Hint="文件地址" Width="150" HorizontalAlignment="Left"
+                 Margin="100,0,0,0" VerticalAlignment="Top">
+        </TextBox>
+    </Grid>
+</Window>
