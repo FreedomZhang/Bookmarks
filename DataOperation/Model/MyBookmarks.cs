@@ -18,4 +18,17 @@ namespace DataOperation.Model
 
         public  string Source { get; set; }
     }
+
+    public class BookmarksType
+    {
+        /// <summary>
+        /// 分类集合
+        /// </summary>
+        public List<string> Type { get; set; }
+        /// <summary>
+        /// 详细内容
+        /// </summary>
+        public List<MyBookmarks> Info { get; set; }
+    }
+
 }

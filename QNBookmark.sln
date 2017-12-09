@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QNBookmark", "QNBookmark\QNBookmark.csproj", "{AB894CF5-9A40-4C17-86FF-23A7E7B08265}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataOperation", "DataOperation\DataOperation.csproj", "{F7FB59F2-64B1-43E4-BEE5-9788F8EC9B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QNBookmarkWpf", "QNBookmarkWpf\QNBookmarkWpf.csproj", "{76389628-0537-4D99-A212-0799356956BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +23,15 @@ Global
 		{F7FB59F2-64B1-43E4-BEE5-9788F8EC9B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7FB59F2-64B1-43E4-BEE5-9788F8EC9B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7FB59F2-64B1-43E4-BEE5-9788F8EC9B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76389628-0537-4D99-A212-0799356956BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76389628-0537-4D99-A212-0799356956BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76389628-0537-4D99-A212-0799356956BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76389628-0537-4D99-A212-0799356956BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E34E5942-4C9E-4AFC-882D-34F9B68EF693}
 	EndGlobalSection
 EndGlobal

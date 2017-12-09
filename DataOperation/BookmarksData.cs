@@ -76,7 +76,15 @@ namespace DataOperation
         /// <returns></returns>
         public static bool SaveMyBookmarksToJsonFile(List<MyBookmarks> myBookmarkses,string filePath)
         {
-            return StringConvert.FileWrite(filePath,StringConvert.ListToJson(myBookmarkses));
+            BookmarksType bookmarksType=new BookmarksType();
+            bookmarksType.Info = myBookmarkses;
+            List<string> types=new List<string>();
+            foreach (var item in myBookmarkses.GroupBy(a => a.Type).ToList())
+            {
+                types.Add(item.Key);
+            }
+            bookmarksType.Type = types;
+            return StringConvert.FileWrite(filePath,StringConvert.ListToJson(bookmarksType));
         }
     }
 }
