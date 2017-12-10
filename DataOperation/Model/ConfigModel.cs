@@ -21,5 +21,13 @@ namespace DataOperation.Model
         /// 书签类型
         /// </summary>
         public string Type { get; set; }
+        /// <summary>
+        /// 保存文件地址
+        /// </summary>
+        public string SaveJsonPath { get; set; }
+        /// <summary>
+        /// 是否自动同步
+        /// </summary>
+        public  bool Synchronization { get; set; }
     }
 }

@@ -20,8 +20,9 @@
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Name="labPath" Grid.Row="0" Content="选择文件地址："></Label>
-        <TextBox Name="filePath" MouseDoubleClick="FilePath_OnMouseDoubleClick" Grid.Row="0"  materialDesign:HintAssist.Hint="文件地址" Width="150" HorizontalAlignment="Left"
+        <TextBox Name="filePath" MouseDoubleClick="FilePath_OnMouseDoubleClick" Grid.Row="0"  materialDesign:HintAssist.Hint="文件地址" Width="300" HorizontalAlignment="Left"
                  Margin="100,0,0,0" VerticalAlignment="Top">
         </TextBox>
+        <Button Name="Save" Grid.Row="1" Content="保存配置" Click="Save_OnClick"></Button>
     </Grid>
 </Window>

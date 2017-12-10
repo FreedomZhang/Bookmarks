@@ -51,7 +51,11 @@ namespace DataOperation
             return obj;
         }
 
-
+        /// <summary>
+        /// 读取文件
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public static string FileRead(string filePath)
         {
             string rel = File.ReadAllText(filePath);

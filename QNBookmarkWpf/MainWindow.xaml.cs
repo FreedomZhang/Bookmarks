@@ -27,26 +27,33 @@ namespace QNBookmarkWpf
         }
 
         private List<MyBookmarks> _myBookmarkses;
+        private ConfigModel _configModel = ConfigDataService.ConfigData;
         private void Test_OnClick(object sender, RoutedEventArgs e)
         {
-            string filePath = @"C:\Users\z8489\Desktop\Bookmarks";
-            string str = StringConvert.FileRead(filePath);
-            ChromeBookmarks chromeBookmarks = (ChromeBookmarks)StringConvert.JsonToList<ChromeBookmarks>(str);
-            BookmarksData bookmarksData = new BookmarksData();
-            _myBookmarkses = bookmarksData.GetBookmarkses(chromeBookmarks);
-            ConteView.ItemsSource = _myBookmarkses;
+            if (!string.IsNullOrEmpty(_configModel?.FilePath))
+            {
+                ChromeBookmarks chromeBookmarks = (ChromeBookmarks)StringConvert.JsonToList<ChromeBookmarks>(StringConvert.FileRead(_configModel.FilePath));
+                BookmarksData bookmarksData = new BookmarksData();
+                _myBookmarkses = bookmarksData.GetBookmarkses(chromeBookmarks);
+                ConteView.ItemsSource = _myBookmarkses;
+            }
+            else
+            {
+                MessageBox.Show("请先设置书签文件地址");
+            }
+
         }
 
         private void MenuVisit_OnClick(object sender, RoutedEventArgs e)
         {
-            MyBookmarks myBookmarks = (MyBookmarks) ConteView.SelectedItems[0];
+            MyBookmarks myBookmarks = (MyBookmarks)ConteView.SelectedItems[0];
 
             System.Diagnostics.Process.Start(myBookmarks.Url);
         }
 
         private void Setting_OnClick(object sender, RoutedEventArgs e)
         {
-            QNBookmarkWpf.Setting setting=new Setting();
+            QNBookmarkWpf.Setting setting = new Setting();
             setting.ShowDialog();
         }
     }
