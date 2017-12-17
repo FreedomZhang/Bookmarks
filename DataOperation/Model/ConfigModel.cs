@@ -29,5 +29,13 @@ namespace DataOperation.Model
         /// 是否自动同步
         /// </summary>
         public  bool Synchronization { get; set; }
+
+        public string QiNiuAccessKey { get; set; }
+
+        public  string QiNiuSecretKey { get; set; }
+        /// <summary>
+        /// 七牛存储文件空间
+        /// </summary>
+        public  string QiNiuSpace { get; set; }
     }
 }

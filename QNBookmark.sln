@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataOperation", "DataOperat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QNBookmarkWpf", "QNBookmarkWpf\QNBookmarkWpf.csproj", "{76389628-0537-4D99-A212-0799356956BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiNiuWork", "QiNiuWork\QiNiuWork.csproj", "{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{76389628-0537-4D99-A212-0799356956BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76389628-0537-4D99-A212-0799356956BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76389628-0537-4D99-A212-0799356956BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

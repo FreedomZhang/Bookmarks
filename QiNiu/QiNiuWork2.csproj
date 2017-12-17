@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7FB59F2-64B1-43E4-BEE5-9788F8EC9B4B}</ProjectGuid>
+    <ProjectGuid>{8FCD12E6-F083-48A4-B3E9-18D1756C04E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataOperation</RootNamespace>
-    <AssemblyName>DataOperation</AssemblyName>
+    <RootNamespace>QiNiu</RootNamespace>
+    <AssemblyName>QiNiu</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,6 +33,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Qiniu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Qiniu.7.0.0.0\lib\Net40\Qiniu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,20 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookmarksData.cs" />
-    <Compile Include="ConfigDataService.cs" />
-    <Compile Include="EnumClass.cs" />
-    <Compile Include="Model\ChromeBookmarks.cs" />
-    <Compile Include="Model\ConfigModel.cs" />
-    <Compile Include="Model\MyBookmarks.cs" />
+    <Compile Include="QiNiuWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringConvert.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

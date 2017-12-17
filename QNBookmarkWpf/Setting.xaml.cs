@@ -31,9 +31,12 @@ namespace QNBookmarkWpf
         /// </summary>
         private void LoadData()
         {
-            if (_configModel!=null)
+            if (_configModel != null)
             {
                 filePath.Text = _configModel.FilePath;
+                qinAK.Text = _configModel.QiNiuAccessKey;
+                qinSK.Text = _configModel.QiNiuSecretKey;
+                qinfilework.Text = _configModel.QiNiuSpace;
             }
         }
 
@@ -55,6 +58,9 @@ namespace QNBookmarkWpf
 
         private void Save_OnClick(object sender, RoutedEventArgs e)
         {
+            _configModel.QiNiuAccessKey = qinAK.Text;
+            _configModel.QiNiuSecretKey = qinSK.Text;
+            _configModel.QiNiuSpace = qinfilework.Text;
             MessageBox.Show(ConfigDataService.SaveConfigData() ? "保存成功" : "保存失败");
         }
     }

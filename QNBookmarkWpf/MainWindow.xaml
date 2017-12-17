@@ -46,5 +46,7 @@
         </ListView>
         <Button Grid.Column="0" Content="测试" Click="Test_OnClick" Name="Test" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
         <Button Grid.Column="0" Content="设置" Name="Setting" Margin="0,40,0,0" Click="Setting_OnClick" HorizontalAlignment="Left"  VerticalAlignment="Top"></Button>
+        <Button Grid.Column="0" Content="同步" Name="SysT" Margin="0,80,0,0" Click="SysT_OnClick" HorizontalAlignment="Left"  VerticalAlignment="Top"></Button>
+        <Button Grid.Column="0" Content="下载测试" Name="Download" Margin="0,120,0,0" Click="Download_OnClick" HorizontalAlignment="Left"  VerticalAlignment="Top"></Button>
     </Grid>
 </Window>

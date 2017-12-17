@@ -17,12 +17,27 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Name="labPath" Grid.Row="0" Content="选择文件地址："></Label>
         <TextBox Name="filePath" MouseDoubleClick="FilePath_OnMouseDoubleClick" Grid.Row="0"  materialDesign:HintAssist.Hint="文件地址" Width="300" HorizontalAlignment="Left"
                  Margin="100,0,0,0" VerticalAlignment="Top">
         </TextBox>
-        <Button Name="Save" Grid.Row="1" Content="保存配置" Click="Save_OnClick"></Button>
+        <Label Name="labAK" Grid.Row="1" Content="七牛AK："></Label>
+        <TextBox Name="qinAK"  Grid.Row="1"   Width="300" HorizontalAlignment="Left"
+                 Margin="100,0,0,0" VerticalAlignment="Top">
+        </TextBox>
+        <Label Name="labSK" Grid.Row="2" Content="七牛SK："></Label>
+        <TextBox Name="qinSK"  Grid.Row="2"   Width="300" HorizontalAlignment="Left"
+                 Margin="100,0,0,0" VerticalAlignment="Top">
+        </TextBox>
+        <Label Name="lab" Grid.Row="3" Content="目标空间名"></Label>
+        <TextBox Name="qinfilework"  Grid.Row="3"   Width="300" HorizontalAlignment="Left"
+                 Margin="100,0,0,0" VerticalAlignment="Top">
+        </TextBox>
+        <Button Name="Save" Grid.Row="4" Content="保存配置" Click="Save_OnClick"></Button>
     </Grid>
 </Window>

@@ -112,6 +112,10 @@
       <Project>{f7fb59f2-64b1-43e4-bee5-9788f8ec9b4b}</Project>
       <Name>DataOperation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QiNiuWork\QiNiuWork.csproj">
+      <Project>{c7fea5fe-f836-4cd3-83c4-32c9a6df305c}</Project>
+      <Name>QiNiuWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
