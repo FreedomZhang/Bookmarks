@@ -19,9 +19,7 @@ namespace DataOperation.Model
         public datameta bookmark_bar { get; set; }
         public datameta other { get; set; }
     }
-
-
-
+    
     public class datameta
     {
         public List<datameta> children { get; set; }

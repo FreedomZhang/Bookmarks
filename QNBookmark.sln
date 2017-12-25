@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QNBookmark", "QNBookmark\QNBookmark.csproj", "{AB894CF5-9A40-4C17-86FF-23A7E7B08265}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QNBookmarkWpf", "QNBookmarkWpf\QNBookmarkWpf.csproj", "{76389628-0537-4D99-A212-0799356956BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiNiuWork", "QiNiuWork\QiNiuWork.csproj", "{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarkWindowsService", "BookmarkWindowsService\BookmarkWindowsService.csproj", "{4EBAC1B7-EFBF-412C-B04B-EA048CE13ED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7FEA5FE-F836-4CD3-83C4-32C9A6DF305C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EBAC1B7-EFBF-412C-B04B-EA048CE13ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBAC1B7-EFBF-412C-B04B-EA048CE13ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBAC1B7-EFBF-412C-B04B-EA048CE13ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBAC1B7-EFBF-412C-B04B-EA048CE13ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
