@@ -93,6 +93,10 @@ namespace QiNiuWork
                 //stream.Close();
                 fs.Close();
                 responseStream.Close();
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);    //存在则删除
+                }
                 System.IO.File.Move(tempFile, path);
                 return true;
             }
@@ -101,5 +105,6 @@ namespace QiNiuWork
                 return false;
             }
         }
+       
     }
 }

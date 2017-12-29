@@ -26,7 +26,7 @@ namespace BookmarkWindowsService
             qiNiuConfig.AK = _configModel.QiNiuAccessKey;
             qiNiuConfig.SK = _configModel.QiNiuSecretKey;
             qiNiuConfig.Bucket = _configModel.QiNiuSpace;
-            qiNiuConfig.LocalFile = @"C:\Users\z8489\Documents\GitHub\Bookmarks\QNBookmarkWpf\bin\Debug\config.json";
+            //qiNiuConfig.LocalFile = @"C:\Users\z8489\Documents\GitHub\Bookmarks\QNBookmarkWpf\bin\Debug\config.json";
             qiNiuConfig.UploadH = UploadFileMessge;
             qiNiuWork.UploadFile(qiNiuConfig);
         }

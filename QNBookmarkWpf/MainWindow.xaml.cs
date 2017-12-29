@@ -32,10 +32,10 @@ namespace QNBookmarkWpf
 
         private void Test_OnClick(object sender, RoutedEventArgs e)
         {
-           if (!string.IsNullOrEmpty(_configModel?.FilePath))
+            if (!string.IsNullOrEmpty(_configModel?.FilePath))
             {
                 ChromeBookmarks chromeBookmarks =
-                    (ChromeBookmarks) StringConvert.JsonToList<ChromeBookmarks>(
+                    (ChromeBookmarks)StringConvert.JsonToList<ChromeBookmarks>(
                         StringConvert.FileRead(_configModel.FilePath));
                 BookmarksData bookmarksData = new BookmarksData();
                 _myBookmarkses = bookmarksData.GetBookmarkses(chromeBookmarks);
@@ -50,7 +50,7 @@ namespace QNBookmarkWpf
 
         private void MenuVisit_OnClick(object sender, RoutedEventArgs e)
         {
-            MyBookmarks myBookmarks = (MyBookmarks) ConteView.SelectedItems[0];
+            MyBookmarks myBookmarks = (MyBookmarks)ConteView.SelectedItems[0];
 
             System.Diagnostics.Process.Start(myBookmarks.Url);
         }
@@ -63,14 +63,19 @@ namespace QNBookmarkWpf
 
         private void SysT_OnClick(object sender, RoutedEventArgs e)
         {
-            QiNiuWork.QiNiuWorkUtil qiNiuWork = new QiNiuWork.QiNiuWorkUtil();
-            QiNiuConfig qiNiuConfig=new QiNiuConfig();
-            qiNiuConfig.AK = _configModel.QiNiuAccessKey;
-            qiNiuConfig.SK = _configModel.QiNiuSecretKey;
-            qiNiuConfig.Bucket = _configModel.QiNiuSpace;
-            qiNiuConfig.LocalFile = @"C:\Users\z8489\Documents\GitHub\Bookmarks\QNBookmarkWpf\bin\Debug\config.json";
-            qiNiuConfig.UploadH = UploadFileMessge;
-            qiNiuWork.UploadFile(qiNiuConfig);
+            if (QiNiuWorkUtil.HttpDownload(_configModel.DownloadUrl, "data.js"))
+            {
+                if (BookmarksData.ContrastBookmarks(_myBookmarkses))
+                {
+                    QiNiuWork.QiNiuWorkUtil qiNiuWork = new QiNiuWork.QiNiuWorkUtil();
+                    QiNiuConfig qiNiuConfig = new QiNiuConfig();
+                    qiNiuConfig.AK = _configModel.QiNiuAccessKey;
+                    qiNiuConfig.SK = _configModel.QiNiuSecretKey;
+                    qiNiuConfig.Bucket = _configModel.QiNiuSpace;
+                    qiNiuConfig.UploadH = UploadFileMessge;
+                    qiNiuWork.UploadFile(qiNiuConfig);
+                }
+            }
         }
 
         private void UploadFileMessge()
@@ -80,7 +85,7 @@ namespace QNBookmarkWpf
 
         private void Download_OnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(QiNiuWorkUtil.HttpDownload("http://oc1phyyfl.bkt.clouddn.com/data.js", "data.js")
+            MessageBox.Show(QiNiuWorkUtil.HttpDownload(_configModel.DownloadUrl, "data.js")
                 ? "下载完成"
                 : "下载失败");
         }

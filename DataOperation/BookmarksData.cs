@@ -74,17 +74,81 @@ namespace DataOperation
         /// <param name="myBookmarkses"></param>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public static bool SaveMyBookmarksToJsonFile(List<MyBookmarks> myBookmarkses,string filePath)
+        public static bool SaveMyBookmarksToJsonFile(List<MyBookmarks> myBookmarkses, string filePath)
         {
-            BookmarksType bookmarksType=new BookmarksType();
+            BookmarksType bookmarksType = new BookmarksType();
             bookmarksType.Info = myBookmarkses;
-            List<string> types=new List<string>();
+            List<string> types = new List<string>();
             foreach (var item in myBookmarkses.GroupBy(a => a.Type).ToList())
             {
                 types.Add(item.Key);
             }
             bookmarksType.Type = types;
-            return StringConvert.FileWrite(filePath,StringConvert.ListToJson(bookmarksType));
+            return StringConvert.FileWrite(filePath, StringConvert.ListToJson(bookmarksType));
+        }
+
+        /// <summary>
+        /// 对比线上书签内容和本地书签内容是否一致
+        /// </summary>
+        /// <param name="localBookmarks">本地书签内容</param>
+        /// <param name="onlineBookmarks">线上书签内容</param>
+        /// <returns></returns>
+        public static bool ContrastBookmarks(List<MyBookmarks> localBookmarks, List<MyBookmarks> onlineBookmarks)
+        {
+            bool rel = false;
+            foreach (MyBookmarks item in localBookmarks)
+            {
+                if (!onlineBookmarks.Contains(item))
+                {
+                    onlineBookmarks.Add(item);
+                    rel = true;
+                }
+            }
+            return rel;
+        }
+
+        /// <summary>
+        /// 将文件保存成data.js文件
+        /// </summary>
+        /// <param name="localBookmarks">本地书签文件数据</param>
+        public static void SaveDataJs(List<MyBookmarks> localBookmarks)
+        {
+            string dataPath = System.Environment.CurrentDirectory + @"\data.json";
+            string datajsPath = System.Environment.CurrentDirectory + @"\data.js";
+            if (BookmarksData.SaveMyBookmarksToJsonFile(localBookmarks, dataPath))
+            {
+                string cont = "var InfoData =" + StringConvert.FileRead(dataPath);
+                StringConvert.FileWrite(datajsPath, cont);
+            }
+
+        }
+
+        /// <summary>
+        /// 对比文件
+        /// </summary>
+        /// <param name="localBookmarks"></param>
+        public static bool ContrastBookmarks(List<MyBookmarks> localBookmarks)
+        {
+            if (localBookmarks == null) return false;
+            string datajsPath = System.Environment.CurrentDirectory + @"\data.js";
+            string datajs = StringConvert.FileRead(datajsPath);
+            datajs = datajs.Substring((datajs.IndexOf("=") + 1));
+            BookmarksType bookmarksType = (BookmarksType)StringConvert.JsonToList<BookmarksType>(datajs);
+            //List<MyBookmarks> onlineBookmarks = bookmarksType.Info;
+            bool rel = false;
+            foreach (MyBookmarks item in localBookmarks)
+            {
+                if (!bookmarksType.Info.Any(a=>a.Url==item.Url))
+                {
+                    bookmarksType.Info.Add(item);
+                    rel = true;
+                }
+            }
+            if (rel)
+            {
+                SaveDataJs(localBookmarks);
+            }
+            return rel;
         }
     }
 }

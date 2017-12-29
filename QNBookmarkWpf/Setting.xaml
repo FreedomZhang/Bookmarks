@@ -20,6 +20,7 @@
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Name="labPath" Grid.Row="0" Content="选择文件地址："></Label>
@@ -38,6 +39,10 @@
         <TextBox Name="qinfilework"  Grid.Row="3"   Width="300" HorizontalAlignment="Left"
                  Margin="100,0,0,0" VerticalAlignment="Top">
         </TextBox>
-        <Button Name="Save" Grid.Row="4" Content="保存配置" Click="Save_OnClick"></Button>
+        <Label Name="labDUrl" Grid.Row="4" Content="下载地址"></Label>
+        <TextBox Name="txt_DownloadUrl"  Grid.Row="4"   Width="300" HorizontalAlignment="Left"
+                 Margin="100,0,0,0" VerticalAlignment="Top">
+        </TextBox>
+        <Button Name="Save" Grid.Row="5" Content="保存配置" Click="Save_OnClick"></Button>
     </Grid>
 </Window>

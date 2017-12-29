@@ -37,6 +37,7 @@ namespace QNBookmarkWpf
                 qinAK.Text = _configModel.QiNiuAccessKey;
                 qinSK.Text = _configModel.QiNiuSecretKey;
                 qinfilework.Text = _configModel.QiNiuSpace;
+                txt_DownloadUrl.Text = _configModel.DownloadUrl;
             }
         }
 
@@ -61,6 +62,7 @@ namespace QNBookmarkWpf
             _configModel.QiNiuAccessKey = qinAK.Text;
             _configModel.QiNiuSecretKey = qinSK.Text;
             _configModel.QiNiuSpace = qinfilework.Text;
+            _configModel.DownloadUrl = txt_DownloadUrl.Text;
             MessageBox.Show(ConfigDataService.SaveConfigData() ? "保存成功" : "保存失败");
         }
     }
