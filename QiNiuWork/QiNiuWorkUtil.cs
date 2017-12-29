@@ -15,14 +15,7 @@ namespace QiNiuWork
 
         public void UploadFile(QiNiuConfig qiNiuConfig)
         {
-            //string AK = "DhR0aOgYjluVsdplOW_A7heVOfKW7PSIoR9aU08_";
-            //string SK = "T4W_D6urXqUKutAm3G0aHLE9NEF3RvGhepcXqfqJ";
-            //// 目标空间名
-            //string bucket = "myfreet";
-            //// 目标文件名
-            //string saveKey = "谷歌浏览器书签保存位置2.txt";
-            //// 本地文件
-            //string localFile = @"C:\Users\z8489\Documents\GitHub\Bookmarks\谷歌浏览器书签保存位置.txt";
+
             // 上传策略
             PutPolicy putPolicy = new PutPolicy();
             // 设置要上传的目标空间
@@ -61,9 +54,9 @@ namespace QiNiuWork
         /// <param name="url"></param>
         /// <param name="path"></param>
         /// <returns></returns>
-        public static  bool HttpDownload(string url,string fileName)
+        public static bool HttpDownload(string url, string fileName)
         {
-            string path = System.Environment.CurrentDirectory+@"\"+ fileName;
+            string path = System.Environment.CurrentDirectory + @"\" + fileName;
             string tempPath = System.IO.Path.GetDirectoryName(path) + @"\temp";
             System.IO.Directory.CreateDirectory(tempPath);  //创建临时文件目录
             string tempFile = tempPath + @"\" + System.IO.Path.GetFileName(path) + ".temp"; //临时文件
@@ -105,6 +98,6 @@ namespace QiNiuWork
                 return false;
             }
         }
-       
+
     }
 }
