@@ -67,12 +67,13 @@ namespace QNBookmarkWpf
             {
                 if (BookmarksData.ContrastBookmarks(_myBookmarkses))
                 {
-                    QiNiuWork.QiNiuWorkUtil qiNiuWork = new QiNiuWork.QiNiuWorkUtil();
                     QiNiuConfig qiNiuConfig = new QiNiuConfig();
                     qiNiuConfig.AK = _configModel.QiNiuAccessKey;
                     qiNiuConfig.SK = _configModel.QiNiuSecretKey;
                     qiNiuConfig.Bucket = _configModel.QiNiuSpace;
                     qiNiuConfig.UploadH = UploadFileMessge;
+                    QiNiuWork.QiNiuWorkUtil qiNiuWork = new QiNiuWork.QiNiuWorkUtil();
+                    qiNiuWork.Delete(qiNiuConfig);
                     qiNiuWork.UploadFile(qiNiuConfig);
                 }
             }
