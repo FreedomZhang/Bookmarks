@@ -130,7 +130,7 @@ namespace DataOperation
         public static bool ContrastBookmarks(List<MyBookmarks> localBookmarks)
         {
             if (localBookmarks == null) return false;
-            string datajsPath = System.Environment.CurrentDirectory + @"\data.js";
+            string datajsPath = System.Environment.CurrentDirectory + @"\old_data.js";
             string datajs = StringConvert.FileRead(datajsPath);
             datajs = datajs.Substring((datajs.IndexOf("=") + 1));
             BookmarksType bookmarksType = (BookmarksType)StringConvert.JsonToList<BookmarksType>(datajs);

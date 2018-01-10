@@ -63,7 +63,7 @@ namespace QNBookmarkWpf
 
         private void SysT_OnClick(object sender, RoutedEventArgs e)
         {
-            if (QiNiuWorkUtil.HttpDownload(_configModel.DownloadUrl, "data.js"))
+            if (QiNiuWorkUtil.HttpDownload(_configModel.DownloadUrl, "old_data.js"))
             {
                 if (BookmarksData.ContrastBookmarks(_myBookmarkses))
                 {
